@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сканер курилок</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://riakalm.ru/images/MAY/ohrana.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color:rgb(192, 102, 252);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-shadow: 1px 1px 2px #000; /* чтобы текст был читаемым на фоне */
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: rgba(31, 40, 51, 0.8);
+      color: #66fcf1;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgba(69, 162, 158, 0.8);
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 28px;
+      text-align: center;
+      max-width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Сканер курилок</h1>
+  <button onclick="scan()" aria-label="Сканировать курилки">Сканировать</button>
+  <div id="result"></div>
+
+  <script>
+    const messages = [
+      "Курилка в кармане!",
+      "ЗОЖНИК?.",
+      "Курилка в носу!",
+      "А ну дыхни!.",
+      "Ну не в трусах же!",
+      "Это у тебя такие духи?.",
+      "Курилка в рюкзаке!",
+      "У директора давно был?",
+      "А у тебя я вчера забрал!"
+
+    ];
+
+    function scan() {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById("result").innerText = messages[randomIndex];
+    }
+  </script>
+</body>
+</html>
